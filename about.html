@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Umarbek</title>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="about.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="about-page">
+    <nav class="about-nav">
+        <a href="/" class="home-link" aria-label="Home">
+            <svg class="home-icon about-home" viewBox="0 0 24 24">
+                <path d="M12 5.69l5 4.5V18h-2v-6H9v6H7v-7.81l5-4.5M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z"/>
+            </svg>
+        </a>
+    </nav>
+
+    <main class="about-container">
+        <header class="about-header">
+            <h1>About me in 60 sec</h1>
+            <div class="timer">60</div>
+        </header>
+        
+        <div class="about-content">
+            <div class="about-cards">
+                <div class="about-card" data-category="origin">
+                    <span class="card-number">01</span>
+                    <p>I'm originally from Samarkand, and I haven't done anything particularly significant or noteworthy.</p>
+                </div>
+
+                <!-- Add all your about cards here -->
+            </div>
+
+            <div class="personality-tags">
+                <span class="tag">Minimalist</span>
+                <span class="tag">Independent</span>
+                <span class="tag">Learner</span>
+                <span class="tag">Anti-fragile</span>
+                <span class="tag">Action-focused</span>
+                <span class="tag">Freedom-seeker</span>
+            </div>
+
+            <div class="quote-section">
+                <blockquote>
+                    "I don't measure success as any external metrics. I focus on becoming antifragile."
+                </blockquote>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="about.js"></script>
+</body>
+</html> 

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Umarbek</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="./admin.css">
+    <link rel="stylesheet" href="https://cdn.quilljs.com/1.3.6/quill.snow.css">
+</head>
+<body class="admin-dashboard">
+    <nav class="admin-nav">
+        <div class="admin-header">
+            <h1>Admin Dashboard</h1>
+            <div class="admin-controls">
+                <span class="last-saved">All changes saved</span>
+            <button id="logoutBtn">Logout</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="dashboard-layout">
+        <!-- Sidebar Navigation -->
+        <aside class="admin-sidebar">
+            <div class="admin-menu">
+                <button class="menu-item active" data-section="content">
+                    <svg viewBox="0 0 24 24"><path d="M14 17h7v5h-7zm0-8h7v5h-7zm0-8h7v5h-7zM3 22h8v-5H3zm0-8h8V9H3zm0-8h8V1H3z"/></svg>
+                    Content Manager
+                </button>
+                <button class="menu-item" data-section="essays">
+                    <svg viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zM6 20V4h7v5h5v11H6z"/></svg>
+                    Essays Manager
+                </button>
+                <button class="menu-item" data-section="subscribers">
+                    <svg viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    Subscribers
+                </button>
+                <button class="menu-item" data-section="analytics">
+                    <svg viewBox="0 0 24 24"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    Analytics
+                </button>
+                <button class="menu-item" data-section="settings">
+                    <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                    Settings
+                </button>
+                <button class="menu-item" data-section="book-notes">
+                    <svg viewBox="0 0 24 24"><path d="M12 2C10.34 2 9 3.34 9 5v14c0 1.66 1.34 3 3 3s3-1.34 3-3V5c0-1.66-1.34-3-3-3zm0 18c-1.1 0-2-.9-2-2h4c0 1.1-.9 2-2 2z"/></svg>
+                    Book Notes
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="admin-content">
+            <!-- Content Manager Section -->
+            <section id="content" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>Content Manager</h2>
+                    <div class="section-actions">
+                        <select id="pageSelect" class="page-select">
+                            <option value="home">Home Page</option>
+                            <option value="about">About Page</option>
+                            <option value="portfolio">Portfolio Page</option>
+                            <option value="essays">Essays Page</option>
+                        </select>
+                        <button class="action-btn publish-btn">Publish Changes</button>
+                    </div>
+                </div>
+                
+                <div class="content-editor">
+                    <div id="editor"></div>
+                    <div class="editor-sidebar">
+                        <div class="widget">
+                            <h3>SEO Settings</h3>
+                            <input type="text" placeholder="Meta Title">
+                            <textarea placeholder="Meta Description"></textarea>
+                            <input type="text" placeholder="Keywords">
+                        </div>
+                        <div class="widget">
+                            <h3>Page Settings</h3>
+                            <label>
+                                <input type="checkbox" checked>
+                                Show in Navigation
+                            </label>
+                            <label>
+                                <input type="checkbox" checked>
+                                Enable Comments
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Essays Manager Section -->
+            <section id="essays" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Essays Manager</h2>
+                    <div class="section-actions">
+                        <button class="action-btn new-essay-btn">New Essay</button>
+                    </div>
+                </div>
+                
+                <div class="essays-grid">
+                    <!-- Essays List -->
+                    <div class="essays-list">
+                        <div class="list-header">
+                            <input type="text" placeholder="Search essays..." class="search-essays">
+                            <select class="essay-filter">
+                                <option value="all">All Essays</option>
+                                <option value="published">Published</option>
+                                <option value="draft">Drafts</option>
+                            </select>
+                        </div>
+                        <div class="essays-container" id="essaysList">
+                            <!-- Essays will be loaded here -->
+                        </div>
+                    </div>
+                    
+                    <!-- Essay Editor -->
+                    <div class="essay-editor">
+                        <div class="editor-header">
+                            <input type="text" id="essayTitle" placeholder="Essay Title" class="essay-title-input">
+                            <div class="editor-actions">
+                                <button class="action-btn preview-btn">Preview</button>
+                                <button class="action-btn save-draft-btn">Save Draft</button>
+                                <button class="action-btn publish-essay-btn">Publish</button>
+                            </div>
+                        </div>
+                        <div class="editor-toolbar">
+                            <input type="text" placeholder="Add tags (comma separated)" class="essay-tags">
+                            <input type="text" placeholder="Featured image URL" class="essay-image">
+                        </div>
+                        <div id="essayEditor"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Subscribers Section -->
+            <section id="subscribers" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Email Subscribers</h2>
+                    <div class="section-actions">
+                        <button class="action-btn compose-btn">Compose Email</button>
+                        <button class="action-btn export-btn">Export List</button>
+                    </div>
+                </div>
+
+                <div class="subscribers-table">
+                    <div class="table-controls">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search subscribers...">
+                        </div>
+                        <div class="filter-controls">
+                            <select>
+                                <option>All Subscribers</option>
+                                <option>Active</option>
+                                <option>Inactive</option>
+                            </select>
+                            <button class="filter-btn">Filter</button>
+                        </div>
+                    </div>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll"></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Subscribed Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="subscribersList">
+                            <!-- Subscriber rows will be populated here -->
+                        </tbody>
+                    </table>
+
+                    <div class="table-footer">
+                        <div class="pagination">
+                            <button>Previous</button>
+                            <span>Page 1 of 1</span>
+                            <button>Next</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analytics Section -->
+            <section id="analytics" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Analytics Overview</h2>
+                    <div class="date-range-picker">
+                        <input type="date" id="startDate">
+                        <input type="date" id="endDate">
+                        <button class="apply-btn">Apply</button>
+                    </div>
+                </div>
+
+                <div class="analytics-grid">
+                    <div class="analytics-card">
+                        <h3>Total Visitors</h3>
+                        <div class="metric">12,345</div>
+                        <div class="trend positive">↑ 12.3%</div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Avg. Time on Site</h3>
+                        <div class="metric">2m 45s</div>
+                        <div class="trend negative">↓ 5.2%</div>
+                    </div>
+                    <div class="analytics-card">
+                        <h3>Newsletter Signups</h3>
+                        <div class="metric">234</div>
+                        <div class="trend positive">↑ 8.7%</div>
+                    </div>
+                </div>
+
+                <div class="charts-container">
+                    <div class="chart-widget">
+                        <h3>Traffic Overview</h3>
+                        <canvas id="trafficChart"></canvas>
+                    </div>
+                    <div class="chart-widget">
+                        <h3>Top Pages</h3>
+                        <canvas id="pagesChart"></canvas>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="dashboard-section">
+                <div class="section-header">
+                    <h2>Site Settings</h2>
+                    <button class="action-btn save-settings">Save Changes</button>
+                </div>
+
+                <div class="settings-grid">
+                    <div class="settings-card">
+                        <h3>General Settings</h3>
+                        <div class="setting-group">
+                            <label>Site Title</label>
+                            <input type="text" value="Umarbek">
+                        </div>
+                        <div class="setting-group">
+                            <label>Site Description</label>
+                            <textarea>An utter maniac</textarea>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Email Settings</h3>
+                        <div class="setting-group">
+                            <label>SMTP Server</label>
+                            <input type="text">
+                        </div>
+                        <div class="setting-group">
+                            <label>SMTP Port</label>
+                            <input type="number">
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3>Security Settings</h3>
+                        <div class="setting-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                Enable 2FA
+                            </label>
+                        </div>
+                        <div class="setting-group">
+                            <label>
+                                <input type="checkbox" checked>
+                                Auto-logout after inactivity
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    </main>
+    </div>
+
+    <!-- Email Composer Modal -->
+    <div id="emailModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Compose Email</h2>
+                <button class="close-modal">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="composer-form">
+                    <input type="text" placeholder="Subject">
+                    <div id="emailEditor"></div>
+                    <div class="recipient-selector">
+                        <h4>Select Recipients</h4>
+                        <div class="recipient-list">
+                            <!-- Recipients will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="action-btn preview-btn">Preview</button>
+                <button class="action-btn send-btn">Send Email</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./dashboard.js"></script>
+</body>
+</html> 

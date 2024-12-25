@@ -1,0 +1,20 @@
+.about-page {
+    background-color: var(--bg-color);
+    min-height: 100vh;
+    padding: 4rem;
+}
+
+.about-nav {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    z-index: 100;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+/* Rest of your about page styles... */

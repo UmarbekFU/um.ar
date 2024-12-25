@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essays - Umarbek</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .essays-container {
+            max-width: 700px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .essays-header {
+            margin-bottom: 4rem;
+        }
+
+        .essays-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .essays-header p {
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.6;
+        }
+
+        .essays-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .essay-item {
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: baseline;
+            gap: 1rem;
+        }
+
+        .essay-date {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.9rem;
+            min-width: 4rem;
+        }
+
+        .essay-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 1.1rem;
+            line-height: 1.4;
+        }
+
+        .essay-link:hover {
+            color: var(--accent-color);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            color: var(--text-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.03);
+            opacity: 0.6;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            opacity: 1;
+            transform: translateX(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .essays-container {
+                margin: 4rem auto;
+            }
+
+            .essay-item {
+                flex-direction: column;
+                gap: 0.3rem;
+            }
+
+            .essay-date {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="./index.html" class="back-link" aria-label="Back to home">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+            <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+    </a>
+
+    <div class="essays-container">
+        <header class="essays-header">
+            <h1>Essays</h1>
+            <p>
+                I write about design, technology, philosophy, and occasionally about life.
+                These essays are my attempt to understand things better through writing.
+            </p>
+        </header>
+
+        <ul class="essays-list">
+            <li class="essay-item">
+                <span class="essay-date">Dec 2023</span>
+                <a href="./essays/simplicity.html" class="essay-link">The Art of Simplicity in Design</a>
+            </li>
+            <li class="essay-item">
+                <span class="essay-date">Nov 2023</span>
+                <a href="./essays/antifragile.html" class="essay-link">Antifragile Thinking in Modern World</a>
+            </li>
+            <li class="essay-item">
+                <span class="essay-date">Oct 2023</span>
+                <a href="./essays/minimalism.html" class="essay-link">Minimalism: More Than Just Aesthetics</a>
+            </li>
+            <!-- Add more essays as needed -->
+        </ul>
+    </div>
+</body>
+</html> 

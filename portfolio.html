@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Portfolio - Umarbek</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./portfolio.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="./index.html" class="back-link" aria-label="Back to home">
+        <div class="back-circle">
+            <svg class="back-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Password Screen -->
+    <div id="passwordScreen" class="password-screen show">
+        <div class="password-content">
+            <h1>🔒 Unlock the Treasure Box</h1>
+            <p>Enter the secret word to view my investing journey</p>
+            <div class="password-form">
+                <input type="password" id="password" placeholder="Secret word" autofocus>
+                <button id="submitPassword">Unlock</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Portfolio Content (Hidden initially) -->
+    <main id="portfolioContent" class="portfolio-container hide">
+        <header class="portfolio-header">
+            <h1>Investment Portfolio</h1>
+            <p class="portfolio-intro">My journey in value investing and wealth building</p>
+        </header>
+
+        <div class="portfolio-stats">
+            <div class="stat-card">
+                <span class="stat-label">Portfolio Value</span>
+                <span class="stat-value">$XXX,XXX</span>
+                <span class="stat-change positive">+XX% YTD</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Total Investments</span>
+                <span class="stat-value">XX</span>
+                <span class="stat-desc">Companies</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Investment Style</span>
+                <span class="stat-value">Value</span>
+                <span class="stat-desc">Long-term Focus</span>
+            </div>
+        </div>
+
+        <section class="portfolio-section">
+            <h2>Current Holdings</h2>
+            <div class="holdings-grid">
+                <div class="holding-card">
+                    <div class="holding-header">
+                        <h3>Company Name</h3>
+                        <span class="holding-ticker">TICK</span>
+                    </div>
+                    <div class="holding-details">
+                        <div class="holding-stat">
+                            <span class="label">Position</span>
+                            <span class="value">XX%</span>
+                        </div>
+                        <div class="holding-stat">
+                            <span class="label">Return</span>
+                            <span class="value positive">+XX%</span>
+                        </div>
+                    </div>
+                    <p class="holding-thesis">Brief investment thesis about why I invested in this company...</p>
+                </div>
+                <!-- Add more holding cards -->
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>Investment Philosophy</h2>
+            <div class="philosophy-grid">
+                <div class="philosophy-card">
+                    <h3>Value Investing</h3>
+                    <p>Focus on intrinsic value and margin of safety...</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Long-term Horizon</h3>
+                    <p>Minimum holding period of X years...</p>
+                </div>
+                <div class="philosophy-card">
+                    <h3>Risk Management</h3>
+                    <p>Position sizing and diversification strategy...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio-section">
+            <h2>Performance Timeline</h2>
+            <div class="timeline">
+                <!-- Add timeline entries -->
+                <div class="timeline-entry">
+                    <div class="timeline-date">2023</div>
+                    <div class="timeline-content">
+                        <h3>Key Investment Decision</h3>
+                        <p>Description of the decision and its outcome...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="./portfolio.js"></script>
+</body>
+</html> 
